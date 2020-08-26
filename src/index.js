@@ -1,0 +1,11 @@
+const express =require('express')
+const cors =require('cors')
+const app =express()
+const frequency= require('./routes/frequency')
+const bodyParser = require('body-parser')
+app.use(bodyParser.json())
+app.use(cors())
+app.use(frequency)
+app.listen(5000,()=>{
+    console.log("Listening to port 5000!")
+})
